@@ -34,11 +34,15 @@ async function getCoins(){
     setAllCoins(coins)
 }
 function handleWatchList(){
-   let watchListItems=JSON.parse(localStorage.getItem("watchList"));
+   if (typeof window === "undefined") return;
+   let watchListItems = JSON.parse(localStorage.getItem("watchList")) || [];
    if(watchListItems.length>0){
    let filteredWatchListItems=allCoins.filter(item=>watchListItems.includes(item.id))
    setWatchListCoins(filteredWatchListItems)
    }
+   else {
+  setWatchListCoins([]);
+}
   
 }
 console.log(watchListCoins)
