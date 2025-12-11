@@ -1,0 +1,15 @@
+.watch-list-message-textbutton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.watch-list-message-text{
+    text-align: center;
+    color: var(--blue);
+}
+.watch-list-message-button{
+    margin: auto;
+    width: fit-content;
+}
