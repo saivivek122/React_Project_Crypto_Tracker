@@ -1,5 +1,6 @@
 export function watchListText(coinId){
     console.log("The id is",coinId)
+     if (typeof window === "undefined") return false;
     let watchListItems=JSON.parse(localStorage.getItem("watchList"))||[];
     if(watchListItems.includes(coinId)){
      watchListItems=watchListItems.filter((item)=>item!==coinId)
@@ -13,6 +14,7 @@ export function watchListText(coinId){
     }
   }
   export function isThereinWatchList(coinId){
+     if (typeof window === "undefined") return false
     let watchListItems=JSON.parse(localStorage.getItem("watchList"))||[];
     return watchListItems.includes(coinId)
   }

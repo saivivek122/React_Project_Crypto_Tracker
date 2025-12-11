@@ -22,12 +22,10 @@ const Grid = ({ coin }) => {
     setButtonText(!text)
   }
   useEffect(()=>{
-     if(isThereinWatchList(coin.id)){
-      setButtonText(false)
-       
-
-     }
-  },[])
+     if (typeof window !== "undefined" && isThereinWatchList(coin.id)) {
+    setButtonText(false);
+  }
+  },[coin.id])
    
   return (
     <Link to={`/coin/${coin.id}`}>

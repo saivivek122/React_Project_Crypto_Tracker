@@ -24,10 +24,10 @@ const List = ({ coin }) => {
 
   }
   useEffect(()=>{
-      if(isThereinWatchList(coin.id)){
-        setButtonText(false)
-      }
-  },[])
+      if (isThereinWatchList(coin.id)) {
+    setButtonText(false);
+  }
+  },[coin.id])
   return (
     <Link to={`/coin/${coin.id}`}>
     <motion.tr initial={{opacity:0,x:50}} animate={{opacity:1,x:0}} transition={{duration:0.5}} className="list-row">
